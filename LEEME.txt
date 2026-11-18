@@ -1,0 +1,40 @@
+COPIADOR PORTABLE PARA ASV-GIMNASIOS
+
+Uso en Windows
+  1. Para abrir desde el codigo fuente, instala Python 3.10 o posterior y ejecuta
+     «Abrir-exportador.bat».
+  2. Para crear una aplicacion portable de un solo archivo, ejecuta
+     «Crear-portable.bat» en Windows. El ejecutable quedara en
+     dist\Exportador-ASV.exe y no requerira instalar Python en el equipo
+     donde se use.
+  3. Abre la aplicacion y pulsa «Detectar ASV». Si no se encuentra la
+     instalacion, pulsa «Examinar…» y selecciona su carpeta o la carpeta
+     donde quieras buscar los archivos.
+  4. Selecciona una carpeta de destino existente, como la raiz de un USB.
+  5. Pulsa «Buscar archivos candidatos», revisa las rutas y deja marcados
+     solo los archivos que quieres copiar. La aplicacion los selecciona
+     inicialmente, pero puedes quitar los que no necesites.
+  6. Pulsa «Copiar seleccionados». Se creara una subcarpeta nueva
+     «ASV-Copia-fecha_hora» en el destino. Se conserva la estructura
+     relativa de carpetas del origen para evitar conflictos entre
+     archivos con el mismo nombre.
+
+La deteccion automatica busca entradas instaladas de ASV-GIMNASIOS y
+ejecutables relacionados bajo las carpetas habituales de Archivos de
+programa de Windows. No busca en todo el disco. Si ASV esta en otra
+ubicacion, selecciona su carpeta manualmente.
+
+Se muestran archivos .mdb, .accdb, .sqlite, .sqlite3, .db, .fdb, .gdb,
+.bak, .backup, .zip, .7z, .rar, .xls, .xlsx, .xlsm y .csv. La extension
+no confirma que un archivo pertenezca a ASV ni que sea una copia valida.
+La aplicacion no modifica los originales ni envia informacion por la red.
+
+Importante: usa copias de seguridad cerradas. No copies una base de datos
+que el programa este utilizando, pues puede estar bloqueada o incompleta.
+La herramienta copia los archivos sin abrirlos ni validar su contenido.
+
+El ejecutable debe generarse en Windows. Este proyecto no incluye una
+copia compilada para Windows; «Crear-portable.bat» la construye localmente
+con PyInstaller. Para comprobar las funciones de busqueda y copia, ejecuta:
+
+  py -m unittest

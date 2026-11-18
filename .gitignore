@@ -1,0 +1,6 @@
+/node_modules/
+/dist/
+/.sheetjs/
+/build/
+/*.spec
+__pycache__/
